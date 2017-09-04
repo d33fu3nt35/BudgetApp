@@ -2,24 +2,15 @@
  * Created by daniel on 9/3/17.
  */
 
+// BUDGET CONTROLLER
 var budgetController = (function () {
 
-    var x = 23;
-
-    var add = function (a) {
-        return x + a;
-    }
-
-    return {
-        publicTest: function (b) {
-            return add(b)
-        }
-    }
 
 })();
 
 
 
+// UI CONTROLLER
 var UIController = (function () {
 
     // Some code
@@ -28,14 +19,13 @@ var UIController = (function () {
 
 
 
-var Controller = (function (budgetCtrl, UICtrl) {
+// GLOBAL APPLICATION CONTROLLER
+var controller = (function (budgetCtrl, UICtrl) {
 
-    var z = budgetCtrl.publicTest(5);
+    document.querySelector('.add__btn').addEventListener('click', function () {
 
-    return {
-        anotherPublicTest: function () {
-            console.log(z);
-        }
-    }
+        console.log('Button Was Clicked!')
+
+    })
 
 })(budgetController, UIController);
